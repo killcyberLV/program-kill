@@ -3,13 +3,11 @@ import time
 import os
 from datetime import datetime
 
-v = 1
-
 import requests
 import webbrowser
 
 # Your local version variable (example)
-v = "10"  # or whatever your current version content is
+v = "11"  # or whatever your current version content is
 
 # URL to fetch the raw .v file from GitHub
 raw_url = "https://raw.githubusercontent.com/killcyberLV/program-kill/main/.v"
