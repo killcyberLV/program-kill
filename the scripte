@@ -1,8 +1,43 @@
-from curses.ascii import US
 import subprocess
 import time
 import os
 from datetime import datetime
+
+v = 1
+
+import requests
+import webbrowser
+
+# Your local version variable (example)
+v = "10"  # or whatever your current version content is
+
+# URL to fetch the raw .v file from GitHub
+raw_url = "https://raw.githubusercontent.com/killcyberLV/program-kill/main/.v"
+
+def check_for_update():
+    try:
+        response = requests.get(raw_url)
+        response.raise_for_status()  # Raise error for bad status
+        remote_version = response.text.strip()
+
+        if remote_version != v:
+            print("new version")
+            webbrowser.open("https://github.com/killcyberLV/program-kill/blob/main/.v")
+        else:
+            print("version up to date")
+
+    except requests.RequestException as e:
+        print("Failed to check for update:", e)
+
+# Run the check
+check_for_update()
+
+def open_login_file_with_default_app():
+    path = login_file_path()
+    if os.path.exists(path):
+        os.startfile(path)  # This will open the file in the default associated program (Windows only)
+    else:
+        print("Login file does not exist.")
 
 print("program killer v1.0")
 print("")
@@ -101,6 +136,6 @@ if __name__ == "__main__":
             print("     if you see nothing its normal it mean the ban app is nto running or inactive")
             print("     if in one minute the kill count is more than 30000 get an antivirus, keep using this to avoid expending it")
         elif user_input == "enterlog":
-            print("W.I.P.")
+            open_login_file_with_default_app
         else:
             print("Unknown command.")
