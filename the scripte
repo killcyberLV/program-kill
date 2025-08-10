@@ -20,7 +20,7 @@ def check_for_update():
 
         if remote_version != v:
             print("new version")
-            webbrowser.open("https://github.com/killcyberLV/program-kill/blob/main/.v")
+            webbrowser.open("https://github.com/killcyberLV/program-kill/blob/main/.v%20(1.1)")
         else:
             print("version up to date")
 
