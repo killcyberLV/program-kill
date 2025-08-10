@@ -10,7 +10,7 @@ import webbrowser
 v = "11"  # or whatever your current version content is
 
 # URL to fetch the raw .v file from GitHub
-raw_url = "https://raw.githubusercontent.com/killcyberLV/program-kill/main/.v"
+raw_url = "https://github.com/killcyberLV/program-kill/blob/main/.v%20(1.1)"
 
 def check_for_update():
     try:
